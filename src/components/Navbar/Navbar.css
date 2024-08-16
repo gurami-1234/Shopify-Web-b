@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+.nav-bar{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    background-color: rgb(255, 255,255);
+    padding: 20px;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+}
+/* LOGO */
+.nav-bar .logo{
+    font-size: 2rem
+}
+
+/* SEARCH PLACE */
+.nav-bar .search-place{
+    display: flex;
+    align-items: center;
+}
+.nav-bar .search-place input{
+    width: 400px;
+    height: 30px;
+    padding: 5px 20px;
+    font-size: 1rem;
+    border: 2px solid rgb(59,130,246);
+}
+.nav-bar .search-place button{
+    padding: 2px 15px;
+    background-color:rgb(59,130,246) ;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+}
+
+/* NAV_RIGHT_SIDE */
+.nav-bar .nav-right-side{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 0 25px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.nav-bar .nav-right-side li{
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: relative;
+}
+.nav-bar .nav-right-side .icon-and-text{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-bar .nav-right-side .secondary-color-b{
+    color: rgb(107,114,128) ;
+}
+.nav-bar .nav-right-side .secondary-color{
+    color: rgb(174,178,186);
+}
+
+.nav-bar .nav-right-side li.big-size{
+    font-size: 1.7rem;
+}
+.nav-bar .nav-right-side li .cart-count{
+    position: absolute;
+    font-size: 1rem;
+    background-color: rgb(220,38,38);
+    top: -15px;
+    right: -15px;
+    color: white;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
