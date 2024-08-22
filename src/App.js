@@ -1,12 +1,14 @@
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
 
-      <div style={{height:"1500px"}}></div>
+      <Home/>
+      
       <Footer/>
     </div>
   );
