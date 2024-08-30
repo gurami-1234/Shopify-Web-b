@@ -1,12 +1,12 @@
 import product from '../../assets/product.png'
 import './CartItem.css'
-function CartItem({id,title,category,discountPercentage,price}) {
+function CartItem({id,image,title,category,discountPercentage,price}) {
     let newPrice= price - (price*(discountPercentage/100))
     newPrice = newPrice.toFixed(2)
     return (  
         <div className='cart-item'>
             <div className='image-place'>
-                <img src={product} className='product-image'/>
+                <img src={image} className='product-image'/>
             </div>
             <div className='textures'>
                 <p className='category'>{category}</p>

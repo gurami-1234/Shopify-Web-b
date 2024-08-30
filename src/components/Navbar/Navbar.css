@@ -12,7 +12,10 @@
 .nav-bar .logo{
     font-size: 2rem
 }
-
+.nav-bar .logo a{
+    color: black;
+    text-decoration: none;
+}
 /* SEARCH PLACE */
 .nav-bar .search-place{
     display: flex;
@@ -49,6 +52,15 @@
     cursor: pointer;
     position: relative;
 }
+.nav-bar .nav-right-side li a{
+    color: black;
+    text-decoration: none;
+}
+.nav-bar .nav-right-side li a.active{
+    color: rgb(28, 19, 213); 
+    border-bottom: 2px solid rgb(28, 19, 213);  
+}
+
 .nav-bar .nav-right-side .icon-and-text{
     display: flex;
     align-items: center;
