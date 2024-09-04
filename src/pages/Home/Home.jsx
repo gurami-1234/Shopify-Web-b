@@ -12,14 +12,15 @@ function Home() {
         getAllProducts(8,7).then((data)=>setTrendingProductList(data.products ))
         getAllProducts(8,50).then((data)=>setNewArrivalProductList(data.products ))
     },[])
-    return (  
+    return (   
         <main className="home-page">
             
             <ProductLayout layoutTitle="Trending Products">
                 {
                     trendingProductList.map((el)=>
                         <CartItem 
-                            id={el.id} 
+                            id={el.id}
+                            key={el.id} 
                             image={el.thumbnail}
                             title={el.title}
                             category={el.category} 
@@ -35,6 +36,7 @@ function Home() {
                     newArrivalsProductList.map((el)=>
                         <CartItem 
                             id={el.id} 
+                            key={el.id}
                             image={el.thumbnail}
                             title={el.title}
                             category={el.category} 

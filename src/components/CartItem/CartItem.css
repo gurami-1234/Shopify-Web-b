@@ -25,12 +25,26 @@
 .cart-item .textures p{
     margin: 5px 0;
 }
+
 .cart-item .textures .category{
     color: rgb(107 114 128);
 }
-.cart-item .textures .title{
+.cart-item.dark .textures .category{
+    color: white;
+}
+
+
+.cart-item .textures .title a{
     font-size: 1.2rem;
     font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+.cart-item .textures .title a:hover{
+    text-decoration: underline;
+}
+.cart-item.dark .textures .title a{
+    color: white;
 }
 
 .cart-item .textures .price-buy{
@@ -45,6 +59,9 @@
 }
 .cart-item .textures .price-buy .prices .old-price del{
     color: rgb(107 114 128);
+}
+.cart-item.dark .textures .price-buy .prices .old-price b{
+    color: white;
 }
 .cart-item .textures .price-buy .prices .old-price{
     font-size: 1.1rem;

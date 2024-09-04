@@ -1,13 +1,16 @@
 import { IoSearch } from "react-icons/io5"
 import { FaUser } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { FiMoon } from "react-icons/fi";
+import { FiMoon,FiSun} from "react-icons/fi";
 import { NavLink,Link } from "react-router-dom";
+import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
+import { useContext } from "react";
 import './Navbar.css'
 
 function Navbar() {
+    const {isDark,setIsDark} = useContext(ThemeContext)
     return (  
-        <nav className="nav-bar">
+        <nav className={isDark?"nav-bar dark":"nav-bar"}>
             <div className="logo">
                 <span><Link to="/">SHOPIFY</Link></span>
             </div>
@@ -23,7 +26,7 @@ function Navbar() {
                     <AiOutlineShoppingCart /> 
                     <div className="cart-count"><span>0</span></div> 
                 </li>
-                <li className="big-size"><FiMoon/></li>
+                <button className="big-size theme-btn" onClick={()=>setIsDark( !isDark )}> {isDark?<FiSun/>:<FiMoon/>} </button>
             </ul>
         </nav> 
     );

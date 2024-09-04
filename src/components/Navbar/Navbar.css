@@ -7,6 +7,12 @@
     padding: 20px;
     font-size: 1.2rem;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+    top: 0;
+    position: sticky;
+    z-index: 1;
+}
+.nav-bar.dark{
+    background-color: rgb(30,41,59);
 }
 /* LOGO */
 .nav-bar .logo{
@@ -15,6 +21,9 @@
 .nav-bar .logo a{
     color: black;
     text-decoration: none;
+}
+.nav-bar.dark .logo a{
+    color: white;
 }
 /* SEARCH PLACE */
 .nav-bar .search-place{
@@ -27,7 +36,13 @@
     padding: 5px 20px;
     font-size: 1rem;
     border: 2px solid rgb(59,130,246);
+    background-color: transparent;
+    outline: none;
 }
+.nav-bar.dark .search-place input{
+    color: white;
+}
+
 .nav-bar .search-place button{
     padding: 2px 15px;
     background-color:rgb(59,130,246) ;
@@ -52,9 +67,20 @@
     cursor: pointer;
     position: relative;
 }
+.nav-bar .nav-right-side .theme-btn{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 .nav-bar .nav-right-side li a{
     color: black;
     text-decoration: none;
+}
+.nav-bar.dark .nav-right-side *{
+    color: white;
 }
 .nav-bar .nav-right-side li a.active{
     color: rgb(28, 19, 213); 
@@ -73,7 +99,9 @@
 .nav-bar .nav-right-side .secondary-color{
     color: rgb(174,178,186);
 }
-
+.nav-bar.dark .nav-right-side .secondary-color{
+    color: white;
+}
 .nav-bar .nav-right-side li.big-size{
     font-size: 1.7rem;
 }
