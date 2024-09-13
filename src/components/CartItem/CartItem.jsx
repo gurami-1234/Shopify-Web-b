@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import {ThemeContext} from '../../context/ThemeContext/ThemeContext'
+import {ThemeContext} from 'context/ThemeContext/ThemeContext'
 import { Link } from 'react-router-dom'
 import './CartItem.css'
 function CartItem({id,image,title,category,discountPercentage,price}) {

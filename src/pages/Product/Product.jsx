@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getSingleProduct } from "../../helper/api";
+import { getSingleProduct } from "helper/api";
 import { useEffect, useState } from "react";
 import { BounceLoader } from "react-spinners";
 function Product() {

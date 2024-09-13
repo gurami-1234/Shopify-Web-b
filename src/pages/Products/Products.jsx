@@ -1,7 +1,7 @@
 import ProductsLayout from "./Layout/ProductLayout";
-import CartItem from '../../components/CartItem/CartItem'
+import CartItem from 'components/CartItem/CartItem'
 import { useEffect, useState } from "react";
-import { getAllProducts } from "../../helper/api";
+import { getAllProducts } from "helper/api";
 import { BounceLoader } from "react-spinners";
 function Products() {
 

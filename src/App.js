@@ -1,13 +1,8 @@
-import { useContext, useEffect } from "react";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home/Home";
-import Categories from './pages/Categories/Categories'
-import Products from './pages/Products/Products'
+import { useContext } from "react";
+import {Footer,Navbar} from 'components'
 import { Routes,Route } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext/ThemeContext";
-import NotFound from "./pages/NotFound/NotFound";
-import Product from "./pages/Product/Product";
+import {Home,Categories,Product,Products,NotFound} from 'pages'
 
 function App() {
   const {isDark} = useContext(ThemeContext)
