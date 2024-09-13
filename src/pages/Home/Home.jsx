@@ -1,8 +1,8 @@
-import CartItem from "../../components/CartItem/CartItem";
-import ProductLayout from "../../layouts/ProductsLayout/ProductLayout";
-import { getAllProducts } from "../../helper/api";
+import ProductLayout from "layouts/ProductsLayout/ProductLayout";
+import { getAllProducts } from "helper/api";
 import { useEffect, useState } from "react";
 import { BounceLoader } from "react-spinners";
+import CartItem from 'components/CartItem/CartItem' 
 
 
 function Home() {

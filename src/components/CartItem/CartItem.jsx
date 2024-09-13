@@ -14,7 +14,7 @@ function CartItem({id,image,title,category,discountPercentage,price}) {
             </div>
             <div className='textures'>
                 <p className='category'>{category}</p> 
-                <p className='title'> <Link to={`product/${id}`}>{title}</Link> </p>
+                <p className='title'> <Link to={`/product/${id}`}>{title}</Link> </p>
                 <div className='price-buy'>
                     <div className='prices'>
                         <p className='new-price'> ${newPrice}</p>
@@ -23,7 +23,6 @@ function CartItem({id,image,title,category,discountPercentage,price}) {
                     <button className='buy-cart'>Add To Cart</button>
                 </div>
             </div>
-
         </div>
     );
 }
