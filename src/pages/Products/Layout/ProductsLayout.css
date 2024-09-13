@@ -1,0 +1,18 @@
+.products-layout .header{
+    width: 95%;
+    margin: 0 auto;
+
+}
+
+.products-layout .header .title{
+    font-size: 1.1rem;
+}
+.products-layout.dark .header .title{
+    color: white;
+}
+.products-layout .products-list{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    row-gap: 30px;
+    justify-content: space-evenly;
+}
