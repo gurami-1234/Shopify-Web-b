@@ -21,3 +21,7 @@ export const getAllCategories = async()=>{
     const resp = await axios.get(`${baseUrl}products/categories`)
     return resp.data
 }
+export const getProductsByCategory = async(id)=>{
+    const resp = await axios.get(`${baseUrl}products/category/${id}`)
+    return resp.data.products
+}

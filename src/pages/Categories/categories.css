@@ -1,10 +1,14 @@
 .categories-page{
     width: 98%;
     margin: 0 auto;
+    min-height: 700px;
 }
 .categories-page .title{
-    color: white;
     font-size: 1.1rem;
+}
+.categories-page.dark .title{
+    color: white;
+   
 }
 .categories-page .category-list{
     display: grid;
@@ -14,13 +18,20 @@
 }
 .categories-page .category-list .category-item{
     width: 175px;
-    background-color: rgb(71,85,105);
     padding:15px 25px ;
     line-height: 25px;
     font-size: 1.1rem;
+    background-color: rgb(243,244,246);
+}
+.categories-page.dark .category-list .category-item{ 
+    background-color: rgb(71,85,105);
+    
 }
 .categories-page .category-list .category-item p{
     margin: 0;
+}
+.categories-page.dark .category-list .category-item p{
+   
     color: white;
 }
 

@@ -1,15 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './categories.css'
 import { Link } from 'react-router-dom';
 import { getAllCategories } from 'helper/api';
+import { ThemeContext } from 'context/ThemeContext/ThemeContext';
 function Categories() {
     const [categoryList,setCategoryList] = useState([])
+    const {isDark} = useContext(ThemeContext)
     useEffect(()=>{
         getAllCategories()
             .then((data)=>setCategoryList(data))
     },[])
     return ( 
-        <main className="categories-page">
+        <main className={isDark?"categories-page dark":"categories-page"}>
             <p className='title'>Categories</p>
             <div className='category-list'>
                 {
