@@ -4,12 +4,18 @@ import { Routes,Route } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext/ThemeContext";
 import {Home,Categories,Product,Products,NotFound} from 'pages'
 import Category from "pages/Category/Category";
+import Banner from "components/Banner/Banner";
+import { BannerContext } from "context/BannerContext/BannerContext";
+import LogIn from "components/LogIn/LogIn";
 
 function App() {
   const {isDark} = useContext(ThemeContext)
+  const {isBannerOpen} = useContext(BannerContext)
   return (
     <div className={isDark?"App dark":"App"}>
+        {isBannerOpen && <Banner/>}
         <Navbar/>
+        <LogIn/>
         <Routes>
           <Route index element={<Home/>} />
           <Route path="categories" element={<Categories/>} />

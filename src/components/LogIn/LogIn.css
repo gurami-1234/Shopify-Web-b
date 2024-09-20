@@ -1,0 +1,79 @@
+.login{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.776);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.login .container{
+    width: 340px;
+    background-color: rgb(30,41,59);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    padding: 30px;
+    border: 1px solid white;
+}
+.login .container .header{
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+}
+.login .container .input{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login .container .input .icon{
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+.login .container .input input{
+    width:92%;
+    height: 30px;
+    font-size: 1rem;
+    padding: 5px 0;
+    margin: 0;
+    padding-left: 8%;
+    background-color: rgb(71,85,105);
+    border: 1px solid black;
+    color: white;
+    border-radius: 2px;
+
+}
+.login .container .input input::placeholder{
+    color: rgb(157, 157, 157);
+}
+.login .container .login-btn{
+    width:100%;
+    height: 40px;
+    color: white;
+    background-color: rgb(59,130,246);
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.login .container .no-account{
+    margin: 0;
+    font-size: 1rem;
+}
+.login .container .no-account span{
+    color: white;
+}
+.login .container .no-account a{
+    color: rgb(59, 130,246);
+    text-decoration: none;
+}
