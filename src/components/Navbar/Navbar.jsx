@@ -6,9 +6,11 @@ import { NavLink,Link } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
 import { useContext } from "react";
 import './Navbar.css'
+import { AuthWindowContext } from "context/AuthWindowContext/AuthWindowContext";
 
 function Navbar() {
     const {isDark,setIsDark} = useContext(ThemeContext)
+    const {setIsWinOpen } = useContext(AuthWindowContext)
     return (  
         <nav className={isDark?"nav-bar dark":"nav-bar"}>
             <div className="logo">
@@ -21,7 +23,7 @@ function Navbar() {
             <ul className="nav-right-side">
                 <li><NavLink to="products">Products</NavLink></li>
                 <li><NavLink to="categories">Categories</NavLink></li>
-                <li className="icon-and-text"><FaUser className="secondary-color-b"/><span  className="secondary-color">Login</span></li>
+                <li className="icon-and-text" onClick={()=>setIsWinOpen(true)}><FaUser className="secondary-color-b"/><span  className="secondary-color">Login</span></li>
                 <li className="big-size secondary-color">
                     <AiOutlineShoppingCart /> 
                     <div className="cart-count"><span>0</span></div> 

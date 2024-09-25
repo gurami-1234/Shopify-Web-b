@@ -20,6 +20,18 @@
     row-gap: 15px;
     padding: 30px;
     border: 1px solid white;
+    position: relative;
+}
+.login .container .close-btn{
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 }
 .login .container .header{
     margin: 0;

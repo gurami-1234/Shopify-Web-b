@@ -7,15 +7,17 @@ import Category from "pages/Category/Category";
 import Banner from "components/Banner/Banner";
 import { BannerContext } from "context/BannerContext/BannerContext";
 import LogIn from "components/LogIn/LogIn";
+import { AuthWindowContext } from "context/AuthWindowContext/AuthWindowContext";
 
 function App() {
   const {isDark} = useContext(ThemeContext)
   const {isBannerOpen} = useContext(BannerContext)
+  const {isWinOpen} = useContext(AuthWindowContext)
   return (
     <div className={isDark?"App dark":"App"}>
         {isBannerOpen && <Banner/>}
         <Navbar/>
-        <LogIn/>
+        {isWinOpen && <LogIn/>}
         <Routes>
           <Route index element={<Home/>} />
           <Route path="categories" element={<Categories/>} />
