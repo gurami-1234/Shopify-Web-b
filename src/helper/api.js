@@ -25,3 +25,10 @@ export const getProductsByCategory = async(id)=>{
     const resp = await axios.get(`${baseUrl}products/category/${id}`)
     return resp.data.products
 }
+
+
+
+export const getToken = async(userIfno) => {
+    const resp =await axios.post(`${baseUrl}auth/login`,userIfno)
+    return resp.data.token
+}
