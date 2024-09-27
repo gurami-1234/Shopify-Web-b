@@ -1,13 +1,15 @@
 import { FaUnlock,FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import './LogIn.css'
 import { IoClose } from "react-icons/io5";
-import { useContext, useEffect, useState } from "react";
-import { AuthWindowContext } from "context/AuthWindowContext/AuthWindowContext";
-import { getToken } from "helper/api";
+import { useContext, useState } from "react";
+import { getDataUsingToken, getToken } from "helper/api";
+import {AuthWindowContext,AuthContext,UserInfoContext} from 'context'
+import './LogIn.css'
+
 function LogIn() {
+    const {setUserInfo} = useContext(UserInfoContext)
     const {setIsWinOpen} = useContext(AuthWindowContext)
-    
+    const {setIsAuth} = useContext(AuthContext)
     const [loginInfo,setLoginInof] = useState({
         username:"",
         password:''
@@ -15,6 +17,17 @@ function LogIn() {
 
     const authUser = ()=>{
         getToken(loginInfo)
+            .then((res)=>{
+                localStorage.setItem("accessToken",res)
+                getDataUsingToken(res)
+                    .then((data)=>{
+                        console.log(data);
+                        setIsAuth(true)
+                        setUserInfo(data)
+                    })
+            })
+            .finally(()=>setIsWinOpen(false))
+
     }
     return (  
         <div className="login">

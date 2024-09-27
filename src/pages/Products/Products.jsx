@@ -1,5 +1,5 @@
 import ProductsLayout from "./Layout/ProductLayout";
-import CartItem from 'components/CartItem/CartItem'
+import { CartItem }from 'components'
 import { useEffect, useState } from "react";
 import { getAllProducts } from "helper/api";
 import { BounceLoader } from "react-spinners";

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
+import { ThemeContext } from 'context';
+
 import './ProductLayout.css'
-import { ThemeContext } from '../../context/ThemeContext/ThemeContext';
 function ProductLayout({children,layoutTitle}) {
     const {isDark} = useContext(ThemeContext)
     return (  

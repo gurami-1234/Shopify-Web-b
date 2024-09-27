@@ -2,7 +2,7 @@ import banner from 'images/banner.jpg'
 import { IoClose } from "react-icons/io5";
 import './Banner.css'
 import { useContext } from 'react';
-import { BannerContext } from 'context/BannerContext/BannerContext';
+import { BannerContext } from 'context';
 function Banner() {
     const {setIsBannerOpen} = useContext(BannerContext)
     return (  

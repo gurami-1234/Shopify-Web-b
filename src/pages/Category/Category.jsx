@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
-import './Category.css'
 import ProductLayout from "layouts/ProductsLayout/ProductLayout";
 import { useContext, useEffect, useState } from "react";
 import { getProductsByCategory } from "helper/api";
 import { CartItem } from "components"; 
-import { ThemeContext } from "context/ThemeContext/ThemeContext";
+import { ThemeContext } from "context";
+import './Category.css'
+
 function Category() {
     const {categoryId} = useParams()
     const {isDark} = useContext(ThemeContext)
