@@ -9,10 +9,16 @@ function AuthContextComponent({children}) {
         localStorage.getItem('accessToken')===null?false:true
     )
     useEffect(()=>{
-        localStorage.getItem('accessToken')!==null&&getDataUsingToken(localStorage.getItem('accessToken'))
-            .then((data)=>{
-                setUserInfo(data)
-            })
+        getDataUsingToken(localStorage.getItem('accessToken')).then((resp)=>{
+            if(!resp){
+                localStorage.removeItem("accessToken")
+                setIsAuth(false)
+                console.clear()
+            }
+            else{
+                setUserInfo(resp)
+            }
+        })
     },[])
     useEffect(()=>{
         !isAuth && localStorage.removeItem('accessToken')

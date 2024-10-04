@@ -3,6 +3,7 @@ import axios from 'axios'
 const baseUrl = "https://dummyjson.com/"
 
 export const getAllProducts = async (limit,skip) =>{
+    
     const resp = await axios.get( `${baseUrl}products`,{
         params:{
             limit,
@@ -13,8 +14,15 @@ export const getAllProducts = async (limit,skip) =>{
 }
 
 export const getSingleProduct = async(id)=>{
-    const resp = await axios.get(`${baseUrl}products/${id}`)
-    return resp.data
+    
+    try {
+
+        const resp = await axios.get(`${baseUrl}products/${id}`)
+        return resp.data
+    } catch (error) {
+        return error
+    }
+    
 }
 
 export const getAllCategories = async()=>{
@@ -34,10 +42,22 @@ export const getToken = async(userIfno) => {
 }
 
 export const getDataUsingToken = async(token)=>{
-    const resp = await axios.get(`${baseUrl}user/me`,{
-        headers:{
-            Authorization:`Bearer ${token}` 
+    try {
+        const resp = await axios.get(`${baseUrl}user/me`,{
+            headers:{
+                Authorization:`Bearer ${token}` 
+            }
+        })
+        if(!resp.status===200 && !resp.status===201){
+            throw new Error("Could not get data")
         }
-    })
-    return resp.data
+        else{
+            return resp.data
+        }
+        
+    } catch (error) {
+        
+        return false
+    }
+    
 }
