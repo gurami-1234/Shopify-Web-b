@@ -2,12 +2,14 @@ import axios from 'axios'
 
 const baseUrl = "https://dummyjson.com/"
 
-export const getAllProducts = async (limit,skip) =>{
+export const getAllProducts = async (limit,skip,sorting="default") =>{
     
     const resp = await axios.get( `${baseUrl}products`,{
         params:{
             limit,
-            skip
+            skip,
+            order:sorting!=="default"?sorting:"",
+            sortBy:sorting!=="default"?"price":""
         }
     })
     return resp.data
@@ -34,11 +36,15 @@ export const getProductsByCategory = async(id)=>{
     return resp.data.products
 }
 
-
-
 export const getToken = async(userIfno) => {
-    const resp =await axios.post(`${baseUrl}auth/login`,userIfno)
-    return resp.data.accessToken
+    try {
+        const resp =await axios.post(`${baseUrl}auth/login`,userIfno)
+        return resp.data.accessToken
+    } catch (error) {
+        return  error.response.data.message
+    }
+    
+    
 }
 
 export const getDataUsingToken = async(token)=>{
@@ -60,4 +66,10 @@ export const getDataUsingToken = async(token)=>{
         return false
     }
     
+}
+
+export const searchDataInDB = (searchText) =>{
+        return axios.get(`https://dummyjson.com/products/search?q=${searchText}`)
+            .then((res)=>res.data.products)
+ 
 }

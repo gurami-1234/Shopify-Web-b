@@ -1,13 +1,26 @@
 .products-layout .header{
     width: 95%;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 .products-layout .header .title{
     font-size: 1.1rem;
 }
 .products-layout.dark .header .title{
     color: white;
+}
+.products-layout.dark .header select{
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.products-layout.dark .header select *{
+    background-color: rgb(30,41,59);
 }
 .products-layout .products-list{
     display: grid;

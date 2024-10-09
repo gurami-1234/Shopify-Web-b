@@ -7,14 +7,16 @@ function Products() {
 
     const [productList,setProductList] = useState([])
     const [isLoading,setIsloading] = useState(false)
+    const [sorting,setSorting] = useState("default") //default - asc - desc
+
     useEffect(()=>{
         setIsloading(true)
-        getAllProducts(194,0)
+        getAllProducts(194,0,sorting)
             .then((data)=>setProductList(data.products))
             .finally(()=>setIsloading(false))
-    },[])
+    },[sorting])
     return (  
-        <ProductsLayout>
+        <ProductsLayout sorting={sorting} setSorting={setSorting}>
             {
                 isLoading? <BounceLoader size={100} color="#d8d8d8" cssOverride={{left:"50%",transform:"translateX(-50%)",position:"fixed"}}/>:
                 (  

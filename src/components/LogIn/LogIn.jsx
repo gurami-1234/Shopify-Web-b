@@ -18,13 +18,17 @@ function LogIn() {
     const authUser = ()=>{
         getToken(loginInfo)
             .then((res)=>{
-                localStorage.setItem("accessToken",res)
-                getDataUsingToken(res)
+                if(res==="Invalid credentials"){
+                    alert("Login or password is incorrect")
+                }else{
+                    localStorage.setItem("accessToken",res)
+                    getDataUsingToken(res)
                     .then((data)=>{
                         console.log(data);
                         setIsAuth(true)
                         setUserInfo(data)
                     })
+                }
             })
             .finally(()=>setIsWinOpen(false))
 

@@ -4,4 +4,5 @@ import NotFound from "./NotFound/NotFound";
 import Product from "./Product/Product";
 import Products from "./Products/Products";
 import Category from "./Category/Category";
-export {Categories,Home,NotFound,Product,Products,Category}
+import Profile from "./Profile/Profile";
+export {Categories,Home,NotFound,Product,Products,Category,Profile}
