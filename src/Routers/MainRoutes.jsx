@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import {Home,Categories,Product,Products,NotFound,Category,Profile} from 'pages'
+import {Home,Categories,Product,Products,NotFound,Category,Profile,Search} from 'pages'
 import { Routes,Route, Navigate} from "react-router-dom";
 import { AuthContext } from 'context';
 import MainLayout from 'layouts/MainLayout/MainLayout';
@@ -16,6 +16,7 @@ const MainRoutes = () => {
         <Route path="profile" element={isAuth ? <Profile/> : <Navigate to="/" />} />
         <Route path="product/:productId" element={<Product/>} />
         <Route path="/category/:categoryId" element={<Category/>} />
+        <Route path='/search' element={<Search/>}/>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

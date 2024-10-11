@@ -13,4 +13,20 @@ import { ThemeContext } from "./ThemeContext/ThemeContext";
 import UserInfoContextComponent from "./UserInfoContext/UserInfoContext";
 import { UserInfoContext } from "./UserInfoContext/UserInfoContext";
 
-export {AuthContextComponent,AuthContext,BannerContextComponent,BannerContext,ThemeContextComponent,ThemeContext,UserInfoContextComponent,UserInfoContext,AuthWindowContextComponet,AuthWindowContext}
+import SearchContextComponent from "./SearchContext/SearchContext";
+import { SearchContext } from "./SearchContext/SearchContext";
+
+export {
+    AuthContextComponent,
+    AuthContext,
+    BannerContextComponent,
+    BannerContext,
+    ThemeContextComponent,
+    ThemeContext,
+    UserInfoContextComponent,
+    UserInfoContext,
+    AuthWindowContextComponet,
+    AuthWindowContext,
+    SearchContextComponent,
+    SearchContext
+}

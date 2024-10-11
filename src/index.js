@@ -7,24 +7,31 @@ import {
   BannerContextComponent,
   AuthWindowContextComponet,
   AuthContextComponent,
-  UserInfoContextComponent} from 'context'
+  UserInfoContextComponent,
+  SearchContextComponent
+} from 'context'
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter >
-      <UserInfoContextComponent>
-        <AuthContextComponent>
-          <AuthWindowContextComponet>
-            <BannerContextComponent>
-              <ThemeContextComponent>
-                <App />
-              </ThemeContextComponent>
-            </BannerContextComponent>
-          </AuthWindowContextComponet>
-        </AuthContextComponent>
-      </UserInfoContextComponent>
+      
+        <UserInfoContextComponent>
+          <AuthContextComponent>
+            <AuthWindowContextComponet>
+              <BannerContextComponent>
+                <ThemeContextComponent>
+                  <SearchContextComponent>
+                    <App />
+                  </SearchContextComponent>
+                </ThemeContextComponent>
+              </BannerContextComponent>
+            </AuthWindowContextComponet>
+          </AuthContextComponent>
+        </UserInfoContextComponent>
+      
+      
 
     </BrowserRouter>
   </React.StrictMode>
