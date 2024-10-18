@@ -8,7 +8,6 @@ import {
   AuthWindowContextComponet,
   AuthContextComponent,
   UserInfoContextComponent,
-  SearchContextComponent
 } from 'context'
 import './index.css';
 
@@ -22,9 +21,7 @@ root.render(
             <AuthWindowContextComponet>
               <BannerContextComponent>
                 <ThemeContextComponent>
-                  <SearchContextComponent>
                     <App />
-                  </SearchContextComponent>
                 </ThemeContextComponent>
               </BannerContextComponent>
             </AuthWindowContextComponet>

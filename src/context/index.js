@@ -13,8 +13,6 @@ import { ThemeContext } from "./ThemeContext/ThemeContext";
 import UserInfoContextComponent from "./UserInfoContext/UserInfoContext";
 import { UserInfoContext } from "./UserInfoContext/UserInfoContext";
 
-import SearchContextComponent from "./SearchContext/SearchContext";
-import { SearchContext } from "./SearchContext/SearchContext";
 
 export {
     AuthContextComponent,
@@ -27,6 +25,4 @@ export {
     UserInfoContext,
     AuthWindowContextComponet,
     AuthWindowContext,
-    SearchContextComponent,
-    SearchContext
 }

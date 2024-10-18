@@ -1,5 +1,4 @@
-import { SearchContext } from 'context'
-import React, { useContext, useEffect,useState } from 'react'
+import React, {  useEffect,useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { searchDataInDB } from "helper/api";
 import ProductLayout from 'layouts/ProductsLayout/ProductLayout';
@@ -7,15 +6,10 @@ import { CartItem } from 'components';
 import { BeatLoader } from 'react-spinners';
 const Search = () => {
     const [searchData,setSearchData] = useState([])
-    const [searchParams,setSearchParams] = useSearchParams()
-    const {search,setSearch} = useContext(SearchContext)
-    
+    const [searchParams] = useSearchParams()
     useEffect(()=>{
-            if(searchParams.get("q")){
-                setSearch(searchParams.get("q"))
-            }
-            // setSearchParams({q:search})
-            searchDataInDB(search)
+            let searchWord = searchParams.get("q")
+            searchDataInDB(searchWord)
                 .then((res)=>setSearchData(res))
             
     },[])

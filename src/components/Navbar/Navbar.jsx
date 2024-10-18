@@ -2,9 +2,9 @@ import { IoSearch } from "react-icons/io5"
 import { FaUser } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiMoon,FiSun} from "react-icons/fi";
-import { NavLink,Link, useSearchParams} from "react-router-dom";
-import { useContext,  } from "react";
-import {ThemeContext,AuthWindowContext,AuthContext,UserInfoContext,SearchContext} from 'context'
+import { NavLink,Link,  useNavigate} from "react-router-dom";
+import { useContext, useState,  } from "react";
+import {ThemeContext,AuthWindowContext,AuthContext,UserInfoContext} from 'context'
 import { CiLogout } from "react-icons/ci";
 import './Navbar.css'
 
@@ -13,9 +13,17 @@ function Navbar() {
     const {setIsWinOpen } = useContext(AuthWindowContext)
     const {userInfo} = useContext(UserInfoContext)
     const {isAuth,setIsAuth} = useContext(AuthContext)
-    const {search,setSearch,searchDataDB} = useContext(SearchContext)
-    const [searchParams,setSearchParams] = useSearchParams()
+    const navigate = useNavigate()
+    const [search,setSearch] = useState()
+    const searchData = ()=>{
+        
+        const searchParam = new URLSearchParams({q:search})
 
+        navigate({
+            pathname:"/search",
+            search:searchParam.toString()
+        })
+    }
     return (  
         <nav className={isDark?"nav-bar dark":"nav-bar"}>
             <div className="logo">
@@ -29,10 +37,7 @@ function Navbar() {
                         onChange={(e)=>setSearch(e.target.value) }
                         value={search} />
 
-                    <button onClick={()=>{
-                        
-                        searchDataDB()
-                    }}> <IoSearch/> </button>
+                    <button onClick={searchData}> <IoSearch/> </button>
             </div>
             <ul className="nav-right-side">
                 <li><NavLink to="products">Products</NavLink></li>
